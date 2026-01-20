@@ -20,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
+  height: 90vh;
 }
 
 .item-box {
@@ -71,7 +71,7 @@ body {
 }
 
 .timer-box {
-  transform: translateY(-20px);
+  transform: translateX(-20px);
 }
 @keyframes shake {
   0% {
@@ -191,3 +191,72 @@ body {
   transform: scale(1.1);
   background-color: #00ff88; /* Hover bo'lganda yashil bo'ladi */
 }
+
+
+
+
+
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff; /* Oq fon */
+  border-bottom: 2px solid #f0f0f0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-center {
+  text-align: center;
+}
+
+.header-center h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #333;
+  font-weight: 900;
+}
+
+.round-counter {
+  background-color: #000;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.team-label {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.team-label.blue {
+  color: #2f7ac5;
+}
+
+.team-label.red {
+  color: #d93939;
+}
+
+/* Telefonlar uchun moslashuvchan qilish */
+@media (max-width: 600px) {
+  .game-header {
+    padding: 15px;
+  }
+  .team-label {
+    display: none; /* Kichik ekranda jamoa nomlarini yashirish */
+  }
+}
+
+
+
+
+
+
