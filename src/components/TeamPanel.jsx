@@ -48,7 +48,7 @@ function TeamPanel({ command, color }) {
         <form className="form-item" onSubmit={handleInput}>
           <input
             value={inpValue}
-            type="number"
+            type="text"
             onChange={(e) => setInpValue(e.target.value)}
             className={`answer-inp ${isTrue == "wrong" ? "wrong" : ""}`}
             placeholder="?"
@@ -161,6 +161,16 @@ function TeamPanel({ command, color }) {
           }}
         >
           0
+        </button>
+        <button
+          key="-"
+          className="numpad-btn"
+          type="button"
+          onClick={() => {
+            setInpValue((el) => el + "-");
+          }}
+        >
+          -
         </button>
         <button
           key="c"
