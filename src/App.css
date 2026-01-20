@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1640px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+.rope-video {
+  width: 600px;
+}
+.app {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.item-box {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 5px;
+}
+.question-item {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 5px;
+}
+.answer-btn {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+  background-color: #ffd800;
+  border-radius: 5px;
+  border: none;
+}
+.answer-inp {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+.timer-box {
+  transform: translateY(-20px);
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.wrong {
+  animation: shake 0.3s;
+  border: 2px solid red;
+}
+
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.numpad-btn {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.numpad-btn:nth-child(10) {
+  grid-column: 1/3;
+}
+
+.straight-line {
+  position: absolute;
+  height: 30%;
+  left: 50%;
+  border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+.winner-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Juda quyuq shaffof fon */
+  background-color: rgba(0, 0, 0, 0.9); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Orqa fon xiralashadi, lekin quti ko'rinmaydi */
+  backdrop-filter: blur(12px); 
+}
+
+.winner-inner {
+  /* Hech qanday background va border yo'q */
+  text-align: center;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.winner-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.winner-title {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.winner-score {
+  color: #00ff88;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 20px 0;
+}
+
+.winner-rounds {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.restart-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 16px 45px;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 50px; /* Yumaloq tugma */
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.restart-btn:hover {
+  transform: scale(1.1);
+  background-color: #00ff88; /* Hover bo'lganda yashil bo'ladi */
+}
