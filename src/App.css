@@ -24,6 +24,7 @@ body {
 }
 
 .item-box {
+  width: 20%;
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -35,28 +36,40 @@ body {
 }
 .question-item {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.item-title {
+  font-size: 20px;
 }
 .form-item {
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   justify-content: center;
   gap: 5px;
 }
+.math-section {
+  width: 100%;
+}
 .answer-btn {
+  width: 100%;
   font-size: 18px;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 10px 15px;
   background-color: #ffd800;
   border-radius: 5px;
   border: none;
 }
 .answer-inp {
-  padding: 8px;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 20px;
   border-radius: 5px;
   border: none;
 }
+
 .timer-box {
   transform: translateY(-20px);
 }
@@ -110,13 +123,6 @@ body {
   border: 1px solid black;
 }
 
-
-
-
-
-
-
-
 .winner-screen {
   position: fixed;
   top: 0;
@@ -124,13 +130,13 @@ body {
   width: 100%;
   height: 100%;
   /* Juda quyuq shaffof fon */
-  background-color: rgba(0, 0, 0, 0.9); 
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   /* Orqa fon xiralashadi, lekin quti ko'rinmaydi */
-  backdrop-filter: blur(12px); 
+  backdrop-filter: blur(12px);
 }
 
 .winner-inner {
