@@ -1,5 +1,3 @@
-import React from "react";
-
 function generateQuestion() {
   const a = Math.floor(Math.random() * 20) + 1;
   const b = Math.floor(Math.random() * 10) + 1;

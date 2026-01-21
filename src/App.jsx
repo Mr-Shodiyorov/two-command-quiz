@@ -4,15 +4,26 @@ import Timer from "./components/Timer";
 import Rope from "./components/Rope";
 import "./App.css";
 import { UserContext } from "./components/UseProvider";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 function App() {
   const { gameOver, winner, round, dispatch, score } = useContext(UserContext);
+  const { width, height } = useWindowSize();
 
   return (
     <div className="main">
       <div className="container">
         {gameOver ? (
           <div className="winner-screen">
+            <Confetti
+              width={width}
+              height={height}
+              numberOfPieces={300}
+              recycle={true}
+              gravity={0.15}
+            />
+
             <div className="winner-inner">
               <div className="winner-icon">🏆</div>
               <h1 className="winner-title">
@@ -34,8 +45,7 @@ function App() {
               <div className="header-center">
                 <h1>TUG OF MATH</h1>
               </div>
-                <Timer />
-
+              <Timer />
               <h1>ROUND {round}</h1>
             </div>
             <div className="app">
