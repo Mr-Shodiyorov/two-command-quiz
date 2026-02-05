@@ -17,6 +17,8 @@ const initialState = {
   },
   gameOver: false,
   winner: null,
+  pointDiffirence: 5,
+  maxRound: 5,
 };
 
 function reducer(state, action) {
@@ -26,8 +28,12 @@ function reducer(state, action) {
         ...state.score,
         [action.side]: state.score[action.side] + 1,
       };
-      const winner = Math.abs(newScore.left - newScore.right);
-      const isGameOver = winner >= 5;
+      console.log(newScore);
+
+      // const winner = Math.abs(newScore.left - newScore.right);
+      // const isGameOver = winner >= state.pointDiffirence;
+      const isGameOver = state.round >= state.maxRound;
+
       return {
         ...state,
         score: newScore,
@@ -47,13 +53,13 @@ function reducer(state, action) {
           ? newScore.left > newScore.right
             ? "left"
             : "right"
-          : "",
+          : "draw",
       };
 
     case "tick":
       return {
         ...state,
-        timeLeft: state.timeLeft - 1 ,
+        timeLeft: state.timeLeft - 1,
       };
 
     case "restart":
@@ -73,7 +79,9 @@ function reducer(state, action) {
           right: generateQuestion(),
         },
       };
-    case "time_up":
+    case "time_up": {
+      const isGameOver = state.round >= state.maxRound;
+
       return {
         ...state,
         questions: {
@@ -81,7 +89,22 @@ function reducer(state, action) {
           right: generateQuestion(),
         },
         timeLeft: 10,
-        round: state.round + 1,
+        round: isGameOver ? state.round : state.round + 1,
+        gameOver: isGameOver,
+        winner: isGameOver
+          ? state.score.left > state.score.right
+            ? "left"
+            : state.score.left < state.score.right
+              ? "right"
+              : "draw"
+          : null,
+      };
+    }
+
+    case "setRound":
+      return {
+        ...state,
+        maxRound: Number(action.payload),
       };
 
     default:
