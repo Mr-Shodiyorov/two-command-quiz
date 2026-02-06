@@ -12,21 +12,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+
+/* Video: Responsive scaling */
 .rope-video {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   position: relative;
   z-index: -10;
 }
+
 .app {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80vh; /* Bir oz qisqartirildi headerga joy qolishi uchun */
+  height: 80vh; 
 }
 
+/* Item Box: Flexible width */
 .item-box {
   width: 20%;
+  min-width: 250px; /* Added min-width for better desktop look */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -36,6 +42,7 @@ body {
   color: white;
   gap: 5px;
 }
+
 .question-item {
   text-align: center;
   margin-bottom: 10px;
@@ -44,6 +51,7 @@ body {
 .item-title {
   font-size: 20px;
 }
+
 .form-item {
   width: 100%;
   display: flex;
@@ -51,6 +59,7 @@ body {
   justify-content: center;
   gap: 5px;
 }
+
 .answer-btn {
   width: 100%;
   font-size: 18px;
@@ -61,12 +70,16 @@ body {
   border: none;
   cursor: pointer;
 }
+
+/* Input: Responsive width */
 .answer-inp {
+  width: 100%; /* Changed from static to full width of parent */
   padding: 10px;
   padding-left: 20px;
   font-size: 20px;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
 
 /* Modal Styllari */
@@ -88,7 +101,8 @@ body {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  width: 400px;
+  max-width: 400px;
+  width: 90%; /* Responsive modal width */
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -128,7 +142,6 @@ body {
   background: #ddd;
 }
 
-/* Qolgan stillar ... */
 .timer-box { transform: translateX(-20px); }
 
 @keyframes shake {
@@ -232,4 +245,55 @@ body {
 .winner-rounds{
   color: white;
   margin-bottom: 10px;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+@media (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 0;
+    gap: 30px;
+  }
+  .item-box {
+    width: 60%;
+    min-width: unset;
+  }
+  .straight-line {
+    display: none;
+  }
+  .timer-box {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .item-box {
+    width: 85%;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Fixes for 320px screens */
+  .game-header {
+    padding: 15px 10px;
+  }
+  .header-center h1 {
+    font-size: 18px;
+  }
+  .item-box {
+    width: 100%;
+    padding: 15px;
+  }
+  .answer-inp {
+    font-size: 18px; /* Slightly smaller text for very narrow screens */
+  }
+  .numpad-btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  .winner-title {
+    font-size: 26px;
+  }
 }
