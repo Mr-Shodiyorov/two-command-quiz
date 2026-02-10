@@ -9,7 +9,7 @@ import { useWindowSize } from "react-use";
 import Settings from "./components/Settings";
 
 function App() {
-  const { gameOver, winner, round, dispatch, score } = useContext(UserContext);
+  const { gameOver, winner, round, dispatch, score , maxRound } = useContext(UserContext);
   const { width, height } = useWindowSize();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
@@ -62,7 +62,7 @@ function App() {
                   ⚙️
                 </button>
               </div>
-              <h1>ROUND {round}</h1>
+              <h1>ROUND {round}/{maxRound}</h1>
             </div>
             
             <div className="app">

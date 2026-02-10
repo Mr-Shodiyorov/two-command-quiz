@@ -18,7 +18,7 @@ const initialState = {
   gameOver: false,
   winner: null,
   pointDiffirence: 5,
-  maxRound: 5,
+  maxRound: 2,
 };
 
 function reducer(state, action) {
