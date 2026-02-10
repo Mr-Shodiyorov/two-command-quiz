@@ -10,7 +10,7 @@ const initialState = {
     right: 0,
   },
   round: 1,
-  timeLeft: 10,
+  timeLeft: 30,
   questions: {
     left: generateQuestion(),
     right: generateQuestion(),
@@ -73,7 +73,7 @@ function reducer(state, action) {
           right: 0,
         },
         round: 1,
-        timeLeft: 10,
+        timeLeft: 30,
         questions: {
           left: generateQuestion(),
           right: generateQuestion(),
@@ -88,7 +88,7 @@ function reducer(state, action) {
           left: generateQuestion(),
           right: generateQuestion(),
         },
-        timeLeft: 10,
+        timeLeft: 30,
         round: isGameOver ? state.round : state.round + 1,
         gameOver: isGameOver,
         winner: isGameOver
