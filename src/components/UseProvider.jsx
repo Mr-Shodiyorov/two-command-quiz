@@ -46,7 +46,7 @@ function reducer(state, action) {
           left: generateQuestion(),
           right: generateQuestion(),
         },
-        timeLeft: 10,
+        timeLeft: 30,
         round: state.round + 1,
         gameOver: isGameOver,
         winner: isGameOver
